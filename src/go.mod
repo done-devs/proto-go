@@ -1,3 +1,3 @@
-module github.com/done-devs/proto_go
+module github.com/done-devs/proto-go
 
 go 1.18

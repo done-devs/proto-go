@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/done-devs/proto-go/src/provider"
+	"github.com/done-devs/proto-go"
 )
 
 var (

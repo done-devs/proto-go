@@ -1,4 +1,4 @@
-module github.com/done-devs/proto_go/src/provider
+module github.com/done-devs/proto-go
 
 go 1.18
 
