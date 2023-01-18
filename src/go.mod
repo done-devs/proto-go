@@ -1,4 +1,4 @@
-module proto-go
+module proto_go
 
 go 1.18
 
