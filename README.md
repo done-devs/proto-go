@@ -1,21 +1,14 @@
 # proto-go
 Done's plug-in protobuf generated code for Go
 
-# Code generation
-```bash
-protoc --go_out=. \
-    --go_opt=paths=source_relative \
-    --go-grpc_out=. \
-    --go-grpc_opt=paths=source_relative \
-    --experimental_allow_proto3_optional \
-    proto/provider.proto
-```
 # Configuration
 
 ## Dependencies
 
+Install the code generation modules.
 ```bash
-go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 ```
 Add this to your PATH
 
@@ -23,7 +16,17 @@ Add this to your PATH
 export PATH="$PATH:$(go env GOPATH)/bin"
 ```
 
-
+Install the Protobuf compiler
 ```
-sudo apt install protobuf-compiler golang-goprotobuf-dev
+sudo apt install protobuf-compiler
+```
+## Code generation
+In the root of the repository, run this to generate the code.
+```bash
+protoc --go_out=src \
+    --go_opt=paths=source_relative \
+    --go-grpc_out=src \
+    --go-grpc_opt=paths=source_relative \
+    --experimental_allow_proto3_optional \
+    proto/provider.proto
 ```
