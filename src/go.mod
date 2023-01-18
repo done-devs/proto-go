@@ -1,4 +1,4 @@
-module proto-go
+module provider
 
 go 1.18
 
