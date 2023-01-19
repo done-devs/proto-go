@@ -1,5 +1,13 @@
-# protogo
-Done's plug-in protobuf generated code for Go
+# Proto Go
+Protobuf generated code for Go
+
+# Usage
+Import the library
+```go
+import provider "github.com/done-devs/proto-go/provider"
+```
+
+Then, use implement `provider.ProviderClient`.
 
 # Configuration
 
