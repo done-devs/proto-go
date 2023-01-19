@@ -2,12 +2,14 @@
 Protobuf generated code for Go
 
 # Usage
-Import the library
+Import the library into your project:
 ```go
 import provider "github.com/done-devs/proto-go/provider"
 ```
 
-Then, use implement `provider.UnimplementedProviderServer`.
+Then, embed `provider.UnimplementedProviderServer` into a struct.
+
+Read [here](https://github.com/done-devs/done/blob/70cc340795421b1c27686776c5f6160f0b56a83a/PLUGINS.md) for more details on plugins.
 
 # Configuration
 
