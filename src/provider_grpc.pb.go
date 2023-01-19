@@ -4,7 +4,7 @@
 // - protoc             v3.12.4
 // source: proto/provider.proto
 
-package protogo
+package src
 
 import (
 	context "context"
