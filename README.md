@@ -7,7 +7,7 @@ Import the library
 import provider "github.com/done-devs/proto-go/provider"
 ```
 
-Then, use implement `provider.ProviderClient`.
+Then, use implement `provider.UnimplementedProviderServer`.
 
 # Configuration
 
