@@ -14,7 +14,7 @@ var (
 	Port = flag.Int("port", 3001, "The server port")
 )
 
-// server is used to implement helloworld.GreeterServer.
+// ProviderServer is used to implement provider.GetId.
 type ProviderServer struct {
 	Id          string
 	Name        string
@@ -27,3 +27,5 @@ func (s *ProviderServer) GetId(ctx context.Context, rq *provider.Empty) (*wrappe
 	log.Printf("Received request GetId")
 	return wrapperspb.String(s.Id), nil
 }
+
+// Implement the rest of the methods here.
