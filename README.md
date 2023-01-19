@@ -36,3 +36,6 @@ protoc --go_out=. \
     --experimental_allow_proto3_optional \
     proto/provider.proto
 ```
+
+# Examples
+Find example implementations in the [`examples`](examples) directory.
