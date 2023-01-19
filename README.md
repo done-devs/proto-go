@@ -23,10 +23,8 @@ sudo apt install protobuf-compiler
 ## Code generation
 In the root of the repository, run this to generate the code.
 ```bash
-protoc --go_out=src \
-    --go_opt=paths=source_relative \
-    --go-grpc_out=src \
-    --go-grpc_opt=paths=source_relative \
+protoc --go_out=. \
+    --go-grpc_out=. \
     --experimental_allow_proto3_optional \
     proto/provider.proto
 ```
