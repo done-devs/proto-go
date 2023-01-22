@@ -9,7 +9,7 @@ import provider "github.com/done-devs/proto-go/provider"
 
 Then, embed `provider.UnimplementedProviderServer` into a struct.
 
-Read [here](https://github.com/done-devs/done/blob/70cc340795421b1c27686776c5f6160f0b56a83a/PLUGINS.md) for more details on plugins.
+Read [here](https://github.com/done-devs/done/blob/main/PLUGINS.md) for more details on plugins.
 
 # Configuration
 
