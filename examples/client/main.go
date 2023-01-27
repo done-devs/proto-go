@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"flag"
 	"log"
 	"time"
@@ -9,6 +10,7 @@ import (
 	"github.com/done-devs/proto-go/provider"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 var (
@@ -28,9 +30,30 @@ func main() {
 	// Contact the server and print out its response.
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.GetId(ctx, &provider.Empty{})
+	example_note := "Example notes"
+	r, err := c.CreateTask(ctx, &provider.Task{
+		Title:                "Example Title",
+		Favorite:             false,
+		Today:                false,
+		Status:               provider.Status_NOT_STARTED,
+		Priority:             provider.Priority_HIGH,
+		SubTasks:             make([]*provider.SubTask, 0),
+		Tags:                 make([]string, 0),
+		Notes:                &example_note,
+		CompletionDate:       nil,
+		DeletionDate:         nil,
+		DueDate:              nil,
+		ReminderDate:         nil,
+		Recurrence:           nil,
+		CreatedDateTime:      timestamppb.Now(),
+		LastModifiedDateTime: timestamppb.Now(),
+	})
 	if err != nil {
-		log.Fatalf("could not greet: %v", err)
+		log.Fatalf("Could not process the request: %v", err)
 	}
-	log.Printf("Server Id: %s", r.Value)
+	taskJSON, err := json.MarshalIndent(r.Task, "", "  ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("\nServer response: %s", string(taskJSON))
 }
